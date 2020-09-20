@@ -15,12 +15,13 @@ class _MySplashScreenState extends State<MySplashScreen> {
       navigateAfterSeconds: Home(),
       title: Text(
         'Jan Ken Pon',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        style: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
       ),
       image: Image.asset('assets/img-1.png'),
       backgroundColor: Colors.black,
-      photoSize: 50,
-      loaderColor: Color(0xFFEEDA2A),
+      photoSize: 100,
+      loaderColor: Color(0xFF1E90FF),
     );
   }
 }
