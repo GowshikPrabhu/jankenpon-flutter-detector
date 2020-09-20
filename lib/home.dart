@@ -40,6 +40,28 @@ class _HomeState extends State<Home> {
         model: 'assets/model_unquant.tflite', labels: 'assets/labels.txt');
   }
 
+  pickImage() async {
+    var image = await picker.getImage(source: ImageSource.camera);
+    if (image == null) return null;
+
+    setState(() {
+      _image = File(image.path);
+    });
+
+    classifyImage(_image);
+  }
+
+  pickGalleryImage() async {
+    var image = await picker.getImage(source: ImageSource.gallery);
+    if (image == null) return null;
+
+    setState(() {
+      _image = File(image.path);
+    });
+
+    classifyImage(_image);
+  }
+
   @override
   void dispose() {
     Tflite.close();
